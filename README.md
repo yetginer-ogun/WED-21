@@ -25,4 +25,4 @@ pytest
 ```
 
 ## ✍️ Yazar
-Derinn.
+derin.
