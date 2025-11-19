@@ -4,6 +4,8 @@ import string
 def generate_password(length=12):
     """Belirtilen uzunlukta rastgele bir şifre oluşturur."""
     characters = string.ascii_letters + string.digits + string.punctuation
+    if length <= 0:
+        return "Pozitif sayı kümesi kullan!"
     password = ''
     for i in range(length):
         password += random.choice(characters)
