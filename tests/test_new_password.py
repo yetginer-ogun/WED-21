@@ -1,5 +1,6 @@
 import string
 from password.new_password import generate_password
+import random
 
 def test_password_characters():
     """Şifre oluşturulurken yalnızca geçerli karakterlerin kullanıldığını test eder"""
@@ -34,3 +35,15 @@ def test_password_lenght2():
     lenght = -5
     password = generate_password(lenght)
     assert password == "Pozitif sayı kümesi kullan!"
+
+def test_password_length_string():
+    lenght = "derin"
+    password = generate_password(lenght)
+    assert password == "Sayı giriniz!"
+
+def test_randomseed():
+    random.seed(8)
+    password1 = generate_password()
+    random.seed(8)
+    password2 = generate_password()
+    assert password1 == password2 
